@@ -1,0 +1,181 @@
+.gatito {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    height: 200px; 
+}
+
+.gatito img {
+    max-width: 200%; 
+    max-height: 100%; 
+    border-radius: 10px
+    ;
+}
+
+.album {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px; 
+}
+
+.foto {
+    display: none;
+    position: relative;
+    width: 400px; 
+    height: 450px; 
+    margin-bottom: 20px; 
+    overflow: hidden; 
+    border-radius: 10px;
+    
+    
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.foto.active {
+    display: block;
+}
+
+
+
+.flechas .anterior,
+.flechas .siguiente {
+    cursor: pointer;
+}
+
+.card {
+    background-color: #fedaf1; 
+    padding: 20px;
+    border-radius: 10px; 
+    text-align: justify;
+}
+
+.title {
+    color: #ff4885 ;
+    font-family: "Arial", sans-serif; 
+    text-align: center; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.card p {
+    color: rgb(97, 78, 98); 
+    font-family: "Arial", sans-serif; 
+    font-size: 16px; 
+    line-height: 1.5; 
+    text-align: justify; 
+
+}
+
+.flechas {
+    position: absolute;
+    left: 10px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 100px;
+    color: #ff4d88;
+    z-index: 999; 
+
+}
+
+.contenedor {
+    position: relative; 
+}
+
+
+
+
+
+.flechas span {
+    cursor: pointer;
+    font-size: 30px; 
+    color: #ff4d88; 
+}
+
+.flechas .anterior,
+.flechas .siguiente {
+    cursor: pointer;
+
+}
+
+
+.confeti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.confeti {
+    position: absolute;
+    background: radial-gradient(circle, #fff, transparent);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: confeti-fall 5s ease-out infinite;
+}
+
+@keyframes confeti-fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+
+.tarjeta {
+    width: 600px;
+    height: 600px;
+    perspective: 2000px;
+    
+  }
+  
+  .cara-frontal,
+  .cara-trasera {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .cara-frontal {
+    background-color: #ffd700; 
+    transform-origin: left center;
+    transform: rotateY(0deg);
+    transition: transform 0.5s;
+  }
+  
+  .cara-trasera {
+    background-color: #ff69b4; 
+    transform-origin: right center;
+    transform: rotateY(-180deg);
+    transition: transform 0.5s;
+  }
+  
+  .tarjeta.abierta .cara-frontal {
+    transform: rotateY(180deg);
+  }
+  
+  .tarjeta.abierta .cara-trasera {
+    transform: rotateY(0deg);
+  }
+  
